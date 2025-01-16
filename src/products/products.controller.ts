@@ -16,13 +16,13 @@ export class ProductsController {
   }
 
   // @Get()
-  @MessagePattern({ cmd: 'finad_all' })
+  @MessagePattern({ cmd: 'find_all' })
   findAll(@Payload() paginationDto: PaginationDto) {
     return this.productsService.findAll(paginationDto);
   }
 
   // @Get(':id')
-  @MessagePattern({ cmd: 'finad_one_product' })
+  @MessagePattern({ cmd: 'find_one_product' })
   findOne(@Payload('id', ParseIntPipe) id: number) {
     return this.productsService.findOne(id);
   }
