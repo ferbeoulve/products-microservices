@@ -1,7 +1,4 @@
-import { loadEnvFile } from 'process';
 import * as joi from 'joi';
-
-loadEnvFile();
 
 interface EnvVars {
   PORT: number;

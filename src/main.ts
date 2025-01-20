@@ -12,7 +12,7 @@ async function bootstrap() {
     {
       transport: Transport.NATS,
       options: {
-        server: envs.natsServers,
+        servers: envs.natsServers,
       },
     },
   );
@@ -23,7 +23,9 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
+
   await app.listen();
+
   logger.log(`Products Microservice running on port ${envs.port}`);
 }
 bootstrap();
